@@ -9,6 +9,9 @@ CREATE TABLE Status(
     PRIMARY KEY (Id)
 ) ENGINE = INNODB;
 
+INSERT INTO Status (Description, CreatedDate, ModifiedDate) VALUES ("Inactive", Now(), Now());
+INSERT INTO Status (Description, CreatedDate, ModifiedDate) VALUES ("Active", Now(), Now());
+
 CREATE TABLE AuthSession (
     Id BIGINT(10) NOT NULL AUTO_INCREMENT,
     UserId INT(10) NOT NULL,

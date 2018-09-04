@@ -37,7 +37,7 @@ public class AuthController {
 
     @PostMapping("{userName}/login")
     public ResponseEntity<?> loginUser(@PathVariable String userName, @RequestBody AuthRequest authRequest) {
-        UserDTO user = restAPITemplate.getForObject("http://localhost:8080/users/" + userName, UserDTO.class);
+        UserDTO user = restAPITemplate.getForObject("http://localhost:9090/users/" + userName, UserDTO.class);
         if (user != null) {
             if (user.getPassword().equalsIgnoreCase(authRequest.getPassword())) {
                 AuthSession authSession = createAuthSession(user);
